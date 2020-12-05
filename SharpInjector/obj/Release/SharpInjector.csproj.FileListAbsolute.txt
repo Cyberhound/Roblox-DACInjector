@@ -1,0 +1,7 @@
+C:\Users\Cyberhound\source\repos\DACInjector\SharpInjector\bin\Release\SharpInjector.exe.config
+C:\Users\Cyberhound\source\repos\DACInjector\SharpInjector\bin\Release\SharpInjector.exe
+C:\Users\Cyberhound\source\repos\DACInjector\SharpInjector\bin\Release\SharpInjector.pdb
+C:\Users\Cyberhound\source\repos\DACInjector\SharpInjector\obj\Release\SharpInjector.csprojAssemblyReference.cache
+C:\Users\Cyberhound\source\repos\DACInjector\SharpInjector\obj\Release\SharpInjector.csproj.CoreCompileInputs.cache
+C:\Users\Cyberhound\source\repos\DACInjector\SharpInjector\obj\Release\SharpInjector.exe
+C:\Users\Cyberhound\source\repos\DACInjector\SharpInjector\obj\Release\SharpInjector.pdb
