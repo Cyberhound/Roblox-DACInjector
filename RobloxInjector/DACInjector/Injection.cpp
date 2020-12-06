@@ -30,10 +30,11 @@ bool DACInjector::Load(STRING libPath)
 	{
 		if (libPath == "")
 		{
-			CHAR path[MAX_PATH];
-			GetFullPathName(TEXT("DACInjector.dll"), MAX_PATH, path, NULL);
+			CHAR fileName[MAX_PATH];
+			DWORD pos = GetModuleFileName(GetModuleHandle(NULL), fileName, MAX_PATH);
+			STRING path = STRING(fileName).substr(0, STRING(fileName).find_last_of("\\/"));
+			path += TEXT("\\DACInjector.dll");
 			libPath = path;
-			printf("PATH: %s\n", path);
 		}
 
 		pLibDll = LoadLibrary(libPath.c_str());

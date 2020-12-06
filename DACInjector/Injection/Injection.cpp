@@ -17,10 +17,10 @@ BOOL FileExists(STRING path)
 	if (file.is_open())
 	{
 		file.close();
-		return FALSE;
+		return TRUE;
 	}
 	file.close();
-	return TRUE;
+	return FALSE;
 }
 
 //UNIVERSAL
@@ -29,7 +29,8 @@ int Injection::InjectDLL(STRING dllPath, HANDLE hProc)
 	if (hProc == INVALID_HANDLE_VALUE || !hProc)
 		return 1 /* DACInjectionResult::ROBLOX_NOT_FOUND */;
 
-	/* determine DLL path, scoped so I don't have to deal with 'pathSize' and 'path' variables. */
+	/* determine DLL path */
+	if (!FileExists(dllPath))
 	{
 		CHAR path[MAX_PATH];
 		DWORD pathSize = GetFullPathName(dllPath.c_str(), MAX_PATH, path, NULL);

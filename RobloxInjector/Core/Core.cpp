@@ -22,10 +22,10 @@ BOOL FileExists(STRING path)
 	if (file.is_open())
 	{
 		file.close();
-		return FALSE;
+		return TRUE;
 	}
 	file.close();
-	return TRUE;
+	return FALSE;
 }
 
 const CHAR *resultToString(DACInjectionResult result)
@@ -43,7 +43,7 @@ const CHAR *resultToString(DACInjectionResult result)
 }
 
 
-int main(CHAR **argv, int argc)
+int main(int argc, CHAR **argv)
 {
 	SetConsoleTitle(TEXT("RobloxInjector - by Cyberhound#5672 [Roblox DAC Bypassed Injector]"));
 
@@ -51,11 +51,11 @@ int main(CHAR **argv, int argc)
 	STRING dllPath = "";
 	bool waitForRoblox = false;
 
-	if (argc > 0 && argc <= 2)
+	if (argc > 0 && argc <= 3)
 	{
-		if (argv[0] != "-path")
+		if (argv[1] != "-path" || argc == 2)
 		{
-			dllPath = argv[0];
+			dllPath = argv[1];
 
 			if (!FileExists(dllPath))
 			{
@@ -72,7 +72,7 @@ int main(CHAR **argv, int argc)
 			}
 		}
 		else
-			dllPath = argv[1];
+			dllPath = argv[2];
 
 		if (!DACInjector::Load())
 		{
@@ -102,6 +102,7 @@ int main(CHAR **argv, int argc)
 		/* unload, and give result */
 		printf("Injection result: %s\n", resultToString(result));
 		DACInjector::Unload();
+		Sleep(5000);
 		return 0;
 	}
 
