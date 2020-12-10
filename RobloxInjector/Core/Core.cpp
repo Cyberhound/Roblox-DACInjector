@@ -51,7 +51,7 @@ int main(int argc, CHAR **argv)
 	STRING dllPath = "";
 	bool waitForRoblox = false;
 
-	if (argc > 0 && argc <= 3)
+	if (argc > 1 && argc <= 3)
 	{
 		if (argv[1] != "-path" || argc == 2)
 		{
